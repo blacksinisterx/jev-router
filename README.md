@@ -102,7 +102,7 @@ No persistence needed — the decision log is in-memory/demo-only.
 
 ## Screenshots
 
-**Demo flow** — routing a factual question (fast/Haiku), a code-generation task (balanced/Sonnet), and a multi-step reasoning problem (frontier/Opus), each with its live cost comparison:
+**Demo flow**, genuinely live (`JEV_PROVIDER=jev_agent`, not mock) — routing a factual question (fast/Haiku), a code-generation task (balanced/Sonnet), and a multi-step reasoning problem (frontier/Opus), each with its real cost comparison:
 
 ![JevRouter demo flow](docs/demo.gif)
 
