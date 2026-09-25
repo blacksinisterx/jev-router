@@ -114,6 +114,10 @@ No persistence needed — the decision log is in-memory/demo-only.
 
 ![Routing decision detail with raw Jev answers](docs/decision-detail.png)
 
+**Live Jev output** — `JEV_PROVIDER=jev_agent` against the real API (not mock), routing a complex-reasoning prompt (the farmer/sheep river-crossing puzzle) to the frontier tier via Claude Opus 5, with real ~1046ms latency and the actual `complexity=1/4, task_type=reasoning, reasoning_required=True, latency_sensitive=False` signals Jev returned:
+
+![Live routing decision using the real jev_agent provider](docs/dashboard-live.png)
+
 ## Limitations
 
 - Catalog prices/latencies are illustrative placeholders, not live-fetched from any provider — edit `backend/app/catalog.py` before trusting the numbers for anything real.
