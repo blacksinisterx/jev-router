@@ -1,6 +1,6 @@
 # LinkedIn post draft — JevRouter
 
-**Attach:** `demo.gif` as the primary media.
+**Attach:** `demo.gif` as the primary media — genuinely recorded against the real Jev API (`JEV_PROVIDER=jev_agent`), not mocked. `dashboard-live.png` works as a static fallback.
 
 ---
 
@@ -18,9 +18,9 @@ Then a tier policy picks the cheapest model in a small catalog that can actually
 
 The part I found interesting building this: complexity and "needs reasoning" aren't the same axis. A code-generation task landed at moderate complexity but didn't need heavy reasoning → routed to a balanced-tier model. A word-problem at the same complexity score *did* flag reasoning_required → got escalated to the frontier tier regardless of its complexity number. A naive "complexity score → tier" mapping would've missed that distinction entirely.
 
-The GIF shows three tasks routing to three different tiers, each with a live cost comparison against what every other tier in the catalog would've cost for the same prompt.
+The GIF is a genuinely live run (real Jev calls, not mocked): three tasks routing to three different tiers — factual lookup to fast/Haiku, code generation to balanced/Sonnet, a multi-step reasoning problem to frontier/Opus — each with its real cost comparison against what every other tier in the catalog would've cost for the same prompt.
 
-Built the same way as the first project in this series (JevGuard): FastAPI + Vite/React/shadcn, runs at zero cost by default (mock provider matches Jev's real response schema, so a live key is a one-line env change), no real downstream model calls — it only decides which one *would* be used.
+Built the same way as the first project in this series (JevGuard): FastAPI + Vite/React/shadcn, runs at zero cost by default (mock provider matches Jev's real response schema, so a live key is a one-line env change — same schema the GIF above was recorded with), no real downstream model calls — it only decides which one *would* be used.
 
 Repo + write-up: [link]
 
